@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AAHAA</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="node_modules/material-design-lite/material.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
+  </head>
+
+  <body style="background: linear-gradient(#f60, #e65c00)">
+    <div class="root">
+      <div class="" id="menu_bar">
+        <!-- <section class="mdc-card__primary">
+        <div class="mdl-card__title">
+          <h1 class="mdl-card__title-text">AppAuth-JS</h1>
+        </div>
+        <div class="flex-container">
+          <img class="appauth-logo" src="assets/appauth_electron.svg" />
+        </div>
+      </section> -->
+        <!-- <section class="mdl-card__supporting-text">
+        This example shows how one can integrate AppAuthJS and Electron. For more information look source of the application at the
+        following <a href="https://github.com/openid/AppAuth-JS">https://github.com/openid/AppAuth-JS</a>.
+      </section> -->
+        <div class="" style="padding: 0px 0 0px 5px; width: 100%">
+          <img src="./logo.png" style="width: 15%; float: left; margin: 5px" />
+          <button
+            id="handle-sign-in"
+            class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+          >
+            Loading...
+          </button>
+          <button
+            style="display: none"
+            id="handle-user-info"
+            class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect"
+          >
+            User Info
+          </button>
+        </div>
+      </div>
+      <div id="user-info" class="app-auth-card mdl-card mdl-shadow--2dp">
+        <div class="flex-container">
+          <img id="user-profile-image" />
+          <div id="user-name" class="mdl-typography--headline"></div>
+        </div>
+        <form id="smileys">
+          <input type="radio" name="smiley" value="sad" class="emoji sad" />
+          <input
+            type="radio"
+            name="smiley"
+            value="neither happy or sad (neutral)"
+            class="emoji neutral"
+          />
+          <input
+            type="radio"
+            name="smiley"
+            value="happy"
+            class="emoji happy active"
+          />
+
+          <input type="radio" name="smiley" value="angry" class="emoji angry" />
+          <input type="radio" name="smiley" value="calm" class="emoji calm" />
+          <input
+            type="radio"
+            name="smiley"
+            value="frustrated"
+            class="emoji frustrated"
+          />
+          <input type="radio" name="smiley" value="sick" class="emoji sick" />
+          <input
+            type="radio"
+            name="smiley"
+            value="surprised"
+            class="emoji surprised"
+          />
+          <!-- <input type="radio" name="smiley" value="laughing" class="emoji laughing"> -->
+
+          <div>I am feeling <span id="result">happy</span> today.</div>
+        </form>
+      </div>
+      <!-- <div id="splashScreen">
+        <div class="loader"></div>
+        <p class="loading-text">Loading...</p>
+      </div> -->
+      <!-- Sanjeev Code -->
+
+      <!--
+    <div class="app-auth-card">
+      <div class="flex-container">
+        <img id="user-profile-image">
+        <div id="user-name" class="mdl-typography--headline"></div> -->
+      <!--
+        <table style="border: 1px solid black;">
+          <tr>
+            <td>
+              <a href="">
+                <div class="">
+                  <div class="">
+                    <img class="appauth-logo" src="assets/happy.png" />
+                  </div>
+                  <div class="text-center">
+                    Happy
+                  </div>
+                </div>
+              </a>
+            </td>
+            <td> <img class="appauth-logo" src="assets/calm.png" /></td>
+            <td> <img class="appauth-logo" src="assets/angry.png" /></td>
+          </tr>
+          <tr>
+            <td> <img class="appauth-logo" src="assets/happy.png" /></td>
+            <td> <img class="appauth-logo" src="assets/calm.png" /></td>
+            <td> <img class="appauth-logo" src="assets/angry.png" /></td>
+          </tr>
+          <tr>
+            <td> <img class="appauth-logo" src="assets/happy.png" /></td>
+            <td> <img class="appauth-logo" src="assets/calm.png" /></td>
+            <td> <img class="appauth-logo" src="assets/angry.png" /></td>
+          </tr>
+        </table>-->
+      <!-- <form id="smileys">
+          <input type="radio" name="smiley" value="sad" class="sad">
+          <input type="radio" name="smiley" value="neutral" class="neutral">
+          <input type="radio" name="smiley" value="happy" class="happy" checked="checked">
+          <div>It looks like you're feeling <span id="result">happy</span> today..</div>
+        </form> -->
+      <!--
+      </div>
+    </div>-->
+      <!-- Sanjeev Code End -->
+      <!-- snackbar -->
+      <div id="appauth-snackbar" class="mdl-js-snackbar mdl-snackbar">
+        <div class="mdl-snackbar__text"></div>
+        <button class="mdl-snackbar__action" type="button"></button>
+      </div>
+    </div>
+
+    <!-- Modal Div-->
+    <div id="modal" class="modal">
+      <form id="feedback">
+        <div class="form-field">
+          <textarea
+            class="emoji-text-field"
+            placeholder="Can you please share why you are feeling so"
+            id="test-field"
+          ></textarea>
+          <div class="button-right">
+            <button type="submit" class="submit">Submit</button>
+            <button type="reset" id="clear-btn" class="cancel">Cancel</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div id="dis-error-message" style="color: red; text-align: center"></div>
+    <div id="dis-message" style="color: green; text-align: center"></div>
+    <script src="node_modules/material-design-lite/material.min.js"></script>
+    <script type="text/javascript">
+      require("./built/app");
+    </script>
+  </body>
+</html>

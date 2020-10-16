@@ -1,0 +1,67 @@
+{
+  "name": "AAHAA",
+  "version": "3.0.0",
+  "description": "An Electron App which uses @openid/appauth",
+  "main": "built/index.js",
+  "scripts": {
+    "compile": "tsc",
+    "watch": "tsc --watch",
+    "start": "npm run-script compile && electron .",
+    "dev": "npm run-script watch & electron .",
+    "package": "electron-packager . feedback",
+    "dist": "electron-builder"
+  },
+  "files": [
+    "built/**"
+  ],
+  "keywords": [
+    "AAHAA",
+    "Feedback App"
+  ],
+  "author": "Clarion Technologies, Pune, India",
+  "license": "MIT",
+  "productName": "AAHAA",
+  
+  "build": {
+    "appId": "com.clariontech.aahaa",
+    "win": {
+      "target": "nsis",
+      "icon": "assets\\icons\\clariontecticon.ico"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux":{
+      "maintainer": "720kb.net",
+      "category": "Utility",
+      "description": "npm desktop manager",
+      "packageCategory": "Utility",
+      "target": [
+        "deb"
+      ]
+    }
+  },
+  "dependencies": {
+    "@openid/appauth": "^0.3.5",
+    "ajv": "^6.10.0",
+    "auto-launch": "^5.0.5",
+    "electron-fetch": "^1.3.0",
+    "electron-json-storage": "^4.2.0",
+    "electron-google-oauth": "^2.0.0",
+    "jquery": "^3.4.1",
+    "material-design-lite": "^1.3.0",
+    "node-cron": "^2.0.3",
+    "node-notifier": "^5.4.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "^3.3.29",
+    "@types/react": "^16.3.17",
+    "@types/react-dom": "^16.0.6",
+    "electron": "^4.2.12",
+    "electron-builder": "^20.44.4",
+    "electron-packager": "^13.1.1",
+    "firebase": "^5.10.0",
+    "nodemon": "^1.19.1",
+    "typescript": "^2.9.1"
+  }
+}

@@ -1,0 +1,223 @@
+body {
+  width: 90%;
+}
+.app-auth-card.mdl-card {
+  margin: 0.6rem;
+  width: 70vw;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
+.appauth-logo {
+  flex-grow: 1;
+  background-color: #efefef;
+  width: 25vw;
+  height: 25vw;
+}
+.active {
+  filter: grayscale(0) !important;
+}
+
+.app-auth-profile {
+  margin-top: 2rem;
+}
+
+#user-info {
+  height: auto;
+  min-height: auto;
+  padding: 1rem;
+  width: 100%;
+  min-width: 315px;
+}
+
+#user-name {
+  margin-left: 1rem;
+  align-self: center;
+}
+
+#user-profile-image {
+  align-self: center;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 3rem;
+}
+
+form#smileys input[type="radio"] {
+  -webkit-appearance: none;
+  width: 50px;
+  height: 50px;
+  border: none;
+  cursor: pointer;
+  transition: border 0.2s ease;
+  filter: grayscale(100%);
+  margin: 0 5px;
+  transition: all 0.2s ease;
+}
+form#smileys input[type="radio"]:hover {
+  filter: grayscale(0);
+}
+form#smileys input[type="radio"]:checked {
+  filter: grayscale(0);
+}
+/* form#smileys input[name="smiley"]:checked{
+  filter: grayscale(0) !important;
+} */
+form#smileys input[type="radio"]:focus {
+  outline: 0;
+}
+
+form#smileys input[type="radio"].happy {
+  background: url("./assets/emojis/Happy.jpg") no-repeat center center;
+  background-size: 32px;
+}
+form#smileys input[type="radio"].neutral {
+  background: url("./assets/emojis/Neutral.jpg") no-repeat center center;
+  background-size: 32px;
+}
+form#smileys input[type="radio"].sad {
+  background: url("./assets/emojis/Sad.jpg") no-repeat center center;
+  background-size: 35px;
+}
+form#smileys input[type="radio"].frustrated {
+  background: url("./assets/emojis/frustrated.jpg") no-repeat center center;
+  background-size: 30px;
+}
+form#smileys input[type="radio"].calm {
+  background: url("./assets/emojis/Calm.jpg") no-repeat center center;
+  background-size: 32px;
+}
+form#smileys input[type="radio"].angry {
+  background: url("./assets/emojis/Angry.png") no-repeat center center;
+  background-size: 30px;
+}
+form#smileys input[type="radio"].sick {
+  background: url("./assets/emojis/sick.jpg") no-repeat center center;
+  background-size: 80px;
+}
+form#smileys input[type="radio"].laughing {
+  background: url("./assets/emojis/Laugh.jpg") no-repeat center center;
+  background-size: 30px;
+}
+form#smileys input[type="radio"].surprised {
+  background: url("./assets/emojis/Surprise.png") no-repeat center center;
+  background-size: 30px;
+}
+.button-right {
+  float: right;
+}
+
+.mtt {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  color: #999;
+  text-decoration: none;
+}
+.mtt span {
+  color: #e74c3c;
+}
+.mtt:hover {
+  color: #666;
+}
+.mtt:hover span {
+  color: #c0392b;
+}
+#modal {
+  display: none;
+  width: 100%;
+  margin: 8px;
+  min-width: 310px;
+}
+.form-field textarea {
+  height: 50px;
+  resize: none;
+  border: 1px solid #e5e5e5;
+  width: 100%;
+}
+.form-field .btn-box {
+  text-align: center;
+}
+.form-field button {
+  display: inline-block;
+  height: 30px;
+  line-break: 30px;
+  border-radius: 5px;
+  border: 0;
+}
+.form-field button:first-child {
+  margin-right: 10px;
+}
+.form-field button.submit {
+  background: #4caf50;
+  color: #fff;
+}
+.form-field button.cancel {
+  background: #666;
+  color: #fff;
+}
+#menu_bar {
+  min-height: auto !important;
+  width: 93% !important;
+}
+
+#menu_bar button {
+  float: right !important;
+  color: #fff !important;
+  background-color: #2e303d !important;
+  margin-top: 10px;
+  margin-right: -37px;
+}
+.mdl-button {
+  height: 32px;
+  margin: 0;
+  padding: 0 8px;
+  font-size: 10px;
+}
+
+button#handle-user-info {
+  display: none !important;
+}
+.loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 50px;
+  height: 50px;
+  margin: -75px 0 0 -75px;
+  border: 10px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 10px solid gray;
+
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+.loading-text {
+  position: absolute;
+  left: 50%;
+  top: 68%;
+  z-index: 1;
+  margin: -80px 0 0 -75px;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
